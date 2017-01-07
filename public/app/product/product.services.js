@@ -7,6 +7,10 @@ angular.module("product.services", [])
 
             // Caching Session Storage - Not available per tab basis
             var storage = window.sessionStorage;
+
+            // Caching Local Storage - Available per tab basis
+            var storage = window.localStorage;
+            
             // Synchronous call, so we injected $q at service level, so our cpntroller wont break
             var productData = storage.getItem("products");
             if (productData) {
