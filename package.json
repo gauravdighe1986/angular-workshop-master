@@ -1,0 +1,64 @@
+{
+  "name": "angularjs-workshop",
+  "version": "1.0.0",
+  "description": "AngularJS Workshop starter",
+  "scripts": {
+    "start": "node server.js",
+    "test": "karma start -c karma.conf.js",
+    "pree2e": "npm run webdriver:update",
+    "wd": "npm run webdriver:start",
+    "e2e": "concurrently \"node server.js\"  \"protractor protractor.config.js\" --kill-others --success first",
+    "api-server": "node api-server.js",
+    "api-server-auth": "node api-server.js authEnabled",
+    "api-server-nocors": "node api-server.js noCors",
+    "webdriver:update": "webdriver-manager update",
+    "webdriver:start": "webdriver-manager start",
+    "gulp": "gulp lint",
+    "browserify": "gulp browserify",
+    "gulp-js": "gulp js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodesense/angularjs-workshop.git"
+  },
+  "keywords": [
+    "AngularJS",
+    "Node.js",
+    "Web"
+  ],
+  "author": "Gopalakrishnan Subramani <gopalakrishnan.subramani@gmail.com>",
+  "license": "ISC",
+  "homepage": "https://github.com/nodesense/angularjs-workshop",
+  "dependencies": {
+    "express": "^4.14.0",
+    "gulp-util": "^3.0.7",
+    "gutil": "^1.6.4",
+    "json-server": "^0.8.14",
+    "jwt-simple": "^0.5.0",
+    "lodash": "^4.16.2",
+    "moment": "^2.15.1"
+  },
+  "devDependencies": {
+    "angular": "^1.5.7",
+    "angular-mocks": "^1.5.5",
+    "browserify": "^13.1.0",
+    "concurrently": "^2.2.0",
+    "gulp": "3.9.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "2.0.1",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "jasmine-core": "^2.4.1",
+    "jshint": "2.9.3",
+    "karma": "^0.13.22",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "protractor": "^3.3.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}

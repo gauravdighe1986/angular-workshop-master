@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en" data-ng-app="productApp" >
+<head>
+  
+  <base href="/">
+
+  <meta charset="utf-8">
+  <title>{{title}}</title>
+  <meta name="description" content="AngularJS-NodeSense">
+  <meta name="author" content="krish@nodesen.se">
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <link rel="stylesheet" href="/css/picnic.min.css">
+
+<style>
+  body { margin: 60px; }
+
+  .address {
+    background: greenyellow
+  }
+</style>
+
+</head>
+<body >
+ 
+<div  >
+  <h4>{{title}}</h4>
+ 
+  <div data-ng-controller="HeaderController" >
+    <nav >
+      <a ui-sref="home">Home</a>
+      <a ui-sref="products.list">Products</a>
+      <a ui-sref="discount">Discount</a>
+      <a ui-sref="contact">Contact</a>
+    </nav>
+
+
+  </div>
+
+  <p>City: {{address.city}}</p>
+
+  <p>State: {{address.state}}</p>
+
+
+  <h2>Branch Addresss</h2>
+  <div data-contact-address address="mainAddress" id="main" >
+
+  </div>
+
+   <h2>Main Addresss</h2>
+  <data-contact-address address="branchAddress">
+  </data-contact-address>
+
+  <p ng-if="loading">
+     <span class="label">Loading {{viewName}}</span>
+  </p>
+
+  <!-- container -->
+  <ui-view>
+
+  </ui-view>
+
+
+<!--
+  <div ng-controller="DiscountController">
+    <p>Offer {{discount}}</p>
+    <button ng-click="generate()"> Generate</button>
+
+    <button ng-click="clearCache()">Clear Cache</button>
+  </div>
+
+  <div ng-controller="StorageController">
+    <p>Offer {{discount}}</p>
+    <button ng-click="set()"> set</button>
+
+    <button ng-click="get()"> get</button>
+  </div>
+
+
+  <div ng-controller="DiscountController">
+    <p>Offer {{discount}}</p>
+  </div>
+
+  <div ng-controller="ProductListController">
+      <ul>
+        <li ng-repeat="product in products | byYear:2010 track by $index">
+          {{product.name | uppercase}}-{{product.year}}
+        </li>
+      </ul>
+  </div>
+
+-->
+
+</div>
+ 
+  <script type="text/javascript" src="/components/angular/angular.js"></script>
+
+  <script src="/components/angular-ui-router/release/angular-ui-router.js">
+  </script>
+
+  <script src="/app/js/app.config.js"></script>
+
+  <script src="/app/js/app.directives.js"></script>
+
+  <script src="/app/js/app.cache-service.js"></script>
+
+  <script src="/app/js/app.module.js"></script>
+
+  <script src="/app/js/app.controllers.js"></script>
+
+  <script src="/app/product/product.services.js"></script>
+  
+  <script src="/app/product/product.config.js"></script>
+  
+  <script src="/app/product/product.module.js"></script>
+  <script src="/app/product/product.controllers.js"></script>
+  <script src="/app/product/product.filters.js"></script>
+    
+
+</body>
+</html>

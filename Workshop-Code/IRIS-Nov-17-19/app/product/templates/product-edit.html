@@ -1,0 +1,55 @@
+<h2>Product Edit </h2>
+
+<style>
+    input.ng-invalid {
+        background: red
+    }
+</style>
+
+
+<span ng-if="loading"> Loading ...</span> 
+
+<form name="productForm" ng-submit="saveProduct()" >
+    <p>
+        Name
+        <input name="name" ng-model="product.name" required minlength="2" />
+    </p>
+
+
+    <span ng-if="productForm.name.$error.required">
+        Name is required
+    </span>
+
+
+    <span ng-if="productForm.name.$error.minlength">
+        Length should be minimum 2 chars
+    </span>
+
+
+
+    <p>
+        Year
+        <input name="year" ng-model="product.year" type="number" />
+    </p>
+
+
+    <p>
+        Brand {{brands.length}}
+
+        <select name="brand" ng-model="product.brandId"
+            ng-options="brand.id as brand.name for brand in brands"
+         >
+          
+        </select>
+    </p>
+
+    <!-- bad as this calls method even with validatio erorr -->
+    <!-- <button ng-click="saveProduct()" type="button" >Save</button> -->
+
+    <!-- BAD:  ok, with validation, still makes call -->
+    <!-- <button ng-click="saveProduct()" type="submit" >Save</button> -->
+
+    <button type="submit">Save</button>
+</form>
+
+

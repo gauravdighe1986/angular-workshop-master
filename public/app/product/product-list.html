@@ -1,0 +1,7 @@
+<h2>Product List</h2>
+<input ng-model="year"></input>
+<div class="flex two">
+    <div ng-repeat="p in products | byYear:year | orderBy:'name'">
+        <product-widget product="p"></product-widget>
+    </div>
+</div>

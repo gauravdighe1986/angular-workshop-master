@@ -1,0 +1,25 @@
+<h2>Product Edit</h2>
+
+<style>
+    input.ng-invalid{
+        background-color: yellow
+    }
+</style>
+
+<form name="productForm" ng-submit="saveProduct()">
+    Name <input type="text" name="name" ng-model="product.name" required minlength="2">
+
+    <p ng-if="productForm.name.$error.required">
+        Name is required
+    </p>
+
+    <p ng-show="productForm.name.$error.minlength">
+        Min length is 2 chars
+    </p>
+
+    <br> Year </input>Name <input type="text" name="year" ng-model="product.year" validate-year></input>
+
+    Brand {{brands.length}}<select ng-model="product.brandId" ng-options="brand.id as brand.name for brand in brands"></select>
+
+    <button type="submit" ng-disabled="!productForm.$valid">Save</button>
+</form>

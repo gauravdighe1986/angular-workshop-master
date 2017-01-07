@@ -1,0 +1,7 @@
+<ul>
+    <li ng-repeat="product in products | byYear:2010 track by $index">
+        <a ui-sref="products.edit-resolve({id: product.id})">
+            {{product.name | uppercase}}-{{product.year}}
+        </a>
+    </li>
+</ul>

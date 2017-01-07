@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="productApp">
+
+<head>
+
+  <meta charset="utf-8">
+  <title>{{appName}}</title>
+  <meta name="description" content="AngularJS-NodeSense">
+  <meta name="author" content="krish@nodesen.se">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/css/picnic.min.css">
+
+  <style>
+  body { margin: 60px; }
+  .highlight {
+    background-color: greenyellow;
+  }
+</style>
+
+</head>
+
+<body>
+
+  Rootscope Random Number : {{randomNumber + 1000}}
+  <div ng-controller="HeaderController">
+    <h2>{{appName}}-{{pageTitle}}</h2>
+
+    <button ng-click="changeTitle()">Change Title</button>
+
+    <nav>
+      <a ui-sref="home">Home</a>
+      <a ui-sref="product-list">Products</a>
+      <a ui-sref="about">About</a>
+    </nav>
+  </div>
+
+  <!-- dynamic view controller -->
+  <ui-view>
+
+  </ui-view>
+
+  <contacts></contacts>
+
+
+  <!--<div ng-controller="ProductListController">
+    <div ng-include="'app/product/product-list.html'"></div>
+  </div>-->
+
+
+  <!--Scripts-->
+  <script type="text/javascript" src="/components/angular/angular.js"></script>
+  <script type="text/javascript" src="/components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script type="text/javascript" src="/components/angular-resource/angular-resource.js"></script>
+
+  <script src="app/js/app.js"></script>
+  <script src="app/js/app.config.js"></script>
+  <script src="app/js/app.controllers.js"></script>
+
+  <script src="app/product/product.module.js"></script>
+  <script src="app/product/product.controllers.js"></script>
+  <script src="app/product/product.services.js"></script>
+</body>
+
+</html>
